@@ -38,6 +38,8 @@ const handler = (controller) => {
     };
 };
 
+const app = express() ;
+
 export async function expressStartup(app) {
     app.use(session({
         secret: config.session.secret,
@@ -62,3 +64,7 @@ export async function expressStartup(app) {
         app[method](path, ...middleware, handler(controller));
     });
 }
+
+expressStartup(app);
+
+export default app ;
