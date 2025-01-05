@@ -1,7 +1,7 @@
-// import express from "express";
-import { allRoutes } from "../routes/index.js"; 
-import { helperFunctions } from "../utils/helperFunctions.js";
-import { authenticateToken } from "../middleware/index.js";
+import express from "express";
+// import { allRoutes } from "../routes/index.js"; 
+// import { helperFunctions } from "../utils/helperFunctions.js";
+// import { authenticateToken } from "../middleware/index.js";
 // import { authRoutes } from "../routes/authRoute.js"; // Import your routes
 // import passport from "../config/passport.js"; 
 // import session from "express-session";
@@ -47,18 +47,18 @@ export async function expressStartup(app) {
     // app.use(passport.initialize());
     // app.use(passport.session());
 
-    // app.use(express.json());
+    app.use(express.json());
     // app.use("/auth", authRoutes);
 
     app.get("/", (req, res) => {
         res.send("This is a express test project.OkOkOkOkOkOkOk");
     });
 
-    allRoutes.forEach((route) => {
-        const { method, path, schema = {}, auth = false, controller } = route;
-        const middleware = [];
-        if (schema) { middleware.push(helperFunctions.validateSchema(schema)); }
-        if (auth) { middleware.push(authenticateToken); }
-        app[method](path, ...middleware, handler(controller));
-    });
+    // allRoutes.forEach((route) => {
+    //     const { method, path, schema = {}, auth = false, controller } = route;
+    //     const middleware = [];
+    //     if (schema) { middleware.push(helperFunctions.validateSchema(schema)); }
+    //     if (auth) { middleware.push(authenticateToken); }
+    //     app[method](path, ...middleware, handler(controller));
+    // });
 }
