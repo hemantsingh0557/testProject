@@ -7,6 +7,10 @@ import { redisConnection } from "./startup/redisConnection.js";
 
 const app = express() ;
 
+app.get("/" , (req , res) => {
+    res.send("this si test proejct okookooookkkkkkkk" ) ;
+}) ;
+
 const startServer = async() => {
     await dbConnection() ;
     await redisConnection(); 
