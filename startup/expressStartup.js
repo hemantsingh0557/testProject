@@ -1,7 +1,7 @@
 import express from "express";
-import { allRoutes } from "../routes/index.js"; 
-import { helperFunctions } from "../utils/helperFunctions.js";
-import { authenticateToken } from "../middleware/index.js";
+// import { allRoutes } from "../routes/index.js"; 
+// import { helperFunctions } from "../utils/helperFunctions.js";
+// import { authenticateToken } from "../middleware/index.js";
 import { authRoutes } from "../routes/authRoute.js"; // Import your routes
 import passport from "../config/passport.js"; 
 import session from "express-session";
@@ -56,13 +56,13 @@ export async function expressStartup(app) {
         res.send("This is a test project.");
     });
 
-    allRoutes.forEach((route) => {
-        const { method, path, schema = {}, auth = false, controller } = route;
-        const middleware = [];
-        if (schema) { middleware.push(helperFunctions.validateSchema(schema)); }
-        if (auth) { middleware.push(authenticateToken); }
-        app[method](path, ...middleware, handler(controller));
-    });
+    // allRoutes.forEach((route) => {
+    //     const { method, path, schema = {}, auth = false, controller } = route;
+    //     const middleware = [];
+    //     if (schema) { middleware.push(helperFunctions.validateSchema(schema)); }
+    //     if (auth) { middleware.push(authenticateToken); }
+    //     app[method](path, ...middleware, handler(controller));
+    // });
 }
 
 expressStartup(app);
