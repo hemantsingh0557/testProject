@@ -3,9 +3,9 @@ import express from "express";
 // import { helperFunctions } from "../utils/helperFunctions.js";
 // import { authenticateToken } from "../middleware/index.js";
 // import { authRoutes } from "../routes/authRoute.js"; // Import your routes
-// import passport from "../config/passport.js"; 
-// import session from "express-session";
-// import config from "../config/index.js";
+import passport from "../config/passport.js"; 
+import session from "express-session";
+import config from "../config/index.js";
 import { UAParser } from "ua-parser-js";
 
 const handler = (controller) => {
