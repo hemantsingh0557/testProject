@@ -39,11 +39,11 @@ const handler = (controller) => {
 };
 
 export async function expressStartup(app) {
-    // app.use(session({
-    //     secret: config.session.secret,
-    //     resave: false,
-    //     saveUninitialized: true,
-    // }));
+    app.use(session({
+        secret: config.session.secret,
+        resave: false,
+        saveUninitialized: true,
+    }));
     // app.use(passport.initialize());
     // app.use(passport.session());
 
