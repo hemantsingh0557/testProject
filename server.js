@@ -1,6 +1,6 @@
 import express from "express" ;
 import { dbConnection } from "./startup/dbConnection.js";
-// import app from "./startup/expressStartup.js";
+// import {expressStartup} from "./startup/expressStartup.js";
 import config from "./config/index.js";
 import { redisConnection } from "./startup/redisConnection.js";
 
@@ -21,6 +21,3 @@ const startServer = async() => {
 startServer().catch((error) => {
     console.error("Failed to start the server:", error);
 });
-
-
-// export default app ;
