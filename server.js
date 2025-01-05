@@ -1,28 +1,21 @@
+import express from 'express';
+import { dbConnection } from './startup/dbConnection.js';
+import { redisConnection } from './startup/redisConnection.js';
+import { expressStartup } from './startup/expressStartup.js';
+import config from './config/index.js';
 
-import express from "express" ;
-import { dbConnection } from "./startup/dbConnection.js";
-// import { expressStartup } from "./startup/expressStartup.js";
-import config from "./config/index.js";
-import { redisConnection } from "./startup/redisConnection.js";
+// Create the express app
+const app = express();
 
-const app = express() ;
-
-app.get("/" , (req , res) => {
-    res.send("this si test proejct okookooookkkkkkkk" ) ;
-}) ;
-
-const startServer = async() => {
-    await dbConnection() ;
-    await redisConnection(); 
-    // await expressStartup(app) ;
-    app.listen(config.server.port , ()=> {
-        console.log(`Server is running on http://localhost:${config.server.port}`);
-    });
+const startServer = async () => {
+    await dbConnection();
+    await redisConnection();
+    await expressStartup(app);
 };
 
+// Export the handler to make it work with Vercel
 startServer().catch((error) => {
     console.error("Failed to start the server:", error);
 });
 
-
-export default app ;
+export default app; // Vercel expects the export for serverless function
