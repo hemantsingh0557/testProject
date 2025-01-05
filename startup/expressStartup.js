@@ -1,6 +1,6 @@
 import express from "express";
 // import { allRoutes } from "../routes/index.js"; 
-// import { helperFunctions } from "../utils/helperFunctions.js";
+import { helperFunctions } from "../utils/helperFunctions.js";
 // import { authenticateToken } from "../middleware/index.js";
 // import { authRoutes } from "../routes/authRoute.js"; // Import your routes
 import passport from "../config/passport.js"; 
