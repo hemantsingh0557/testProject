@@ -1,4 +1,4 @@
-import express from "express";
+// import express from "express";
 // import { allRoutes } from "../routes/index.js"; 
 // import { helperFunctions } from "../utils/helperFunctions.js";
 // import { authenticateToken } from "../middleware/index.js";
@@ -47,11 +47,11 @@ export async function expressStartup(app) {
     app.use(passport.initialize());
     app.use(passport.session());
 
-    app.use(express.json());
+    // app.use(express.json());
     app.use("/auth", authRoutes);
 
     app.get("/test", (req, res) => {
-        res.send("This is a test project.OkOkOkOkOkOkOk");
+        res.send("This is a express test project.OkOkOkOkOkOkOk");
     });
 
     // allRoutes.forEach((route) => {

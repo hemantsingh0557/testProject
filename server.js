@@ -6,7 +6,7 @@ import { redisConnection } from "./startup/redisConnection.js";
 
 const app = express() ;
 app.get("/" , (req , res) => {
-    res.send("this si text ptoejcjksdshfshdbsm") ;
+    res.send("this si server text ptoejcjksdshfshdbsm") ;
 });
 
 const startServer = async() => {
