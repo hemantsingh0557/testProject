@@ -48,7 +48,7 @@ export async function expressStartup(app) {
     app.use(passport.session());
 
     app.use(express.json());
-    // app.use("/auth", authRoutes);
+    app.use("/auth", authRoutes);
 
     app.get("/", (req, res) => {
         res.send("This is a express test project.OkOkOkOkOkOkOk");
