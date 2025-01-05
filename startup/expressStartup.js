@@ -45,7 +45,7 @@ export async function expressStartup(app) {
         saveUninitialized: true,
     }));
     app.use(passport.initialize());
-    // app.use(passport.session());
+    app.use(passport.session());
 
     app.use(express.json());
     // app.use("/auth", authRoutes);
