@@ -2,7 +2,7 @@
 // import { allRoutes } from "../routes/index.js"; 
 // import { helperFunctions } from "../utils/helperFunctions.js";
 // import { authenticateToken } from "../middleware/index.js";
-import { authRoutes } from "../routes/authRoute.js"; // Import your routes
+// import { authRoutes } from "../routes/authRoute.js"; // Import your routes
 // import passport from "../config/passport.js"; 
 // import session from "express-session";
 // import config from "../config/index.js";
@@ -48,9 +48,9 @@ export async function expressStartup(app) {
     // app.use(passport.session());
 
     // app.use(express.json());
-    app.use("/auth", authRoutes);
+    // app.use("/auth", authRoutes);
 
-    app.get("/test", (req, res) => {
+    app.get("/", (req, res) => {
         res.send("This is a express test project.OkOkOkOkOkOkOk");
     });
 

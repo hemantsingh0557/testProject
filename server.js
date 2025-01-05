@@ -1,13 +1,11 @@
+
 import express from "express" ;
 import { dbConnection } from "./startup/dbConnection.js";
-import {expressStartup} from "./startup/expressStartup.js";
+import { expressStartup } from "./startup/expressStartup.js";
 import config from "./config/index.js";
 import { redisConnection } from "./startup/redisConnection.js";
 
 const app = express() ;
-app.get("/" , (req , res) => {
-    res.send("this si server text ptoejcjksdshfshdbsm") ;
-});
 
 const startServer = async() => {
     await dbConnection() ;
@@ -21,3 +19,4 @@ const startServer = async() => {
 startServer().catch((error) => {
     console.error("Failed to start the server:", error);
 });
+
