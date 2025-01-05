@@ -1,4 +1,4 @@
-import express from 'express';
+import express from "express";
 import { allRoutes } from "../routes/index.js"; 
 import { helperFunctions } from "../utils/helperFunctions.js";
 import { authenticateToken } from "../middleware/index.js";
