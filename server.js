@@ -20,3 +20,5 @@ startServer().catch((error) => {
     console.error("Failed to start the server:", error);
 });
 
+
+export default app ;
